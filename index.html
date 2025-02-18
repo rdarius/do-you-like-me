@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do you like RDarius?</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #cacaca;
+            text-align: center;
+        }
+        .container {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        #playzone {
+            height: 100%;
+            position: relative;
+        }
+        button {
+            padding: 12px;
+            font-size: 9pt;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 style="padding: 12px;">Do you like RDarius?</h1>
+        <div>
+            <button id="btn1">Yes</button>
+        </div>
+        <div id="playzone">
+            <button id="btn2">No</button>
+        </div>
+    </div>
+
+    <script>
+
+        window.addEventListener('load', function() {
+
+            const btn1 = document.getElementById('btn1');
+            const btn2 = document.getElementById('btn2');
+            const playzone = document.getElementById('playzone');
+
+            btn1.addEventListener('click', function() {
+                alert('Thank BB! I like you too!');
+            });
+
+            btn2.addEventListener('mouseover', moveButton);
+            btn2.addEventListener('focus', function() { moveButton(); btn1.focus() });
+            btn2.addEventListener('click', moveButton);
+
+            function moveButton(){
+                console.log('move');
+                btn2.style.display = 'inline-block';
+                btn2.style.position = 'absolute';
+                btn2.style.top = Math.floor(Math.random() * (playzone.clientHeight - btn2.clientHeight)) + 'px';
+                btn2.style.left = Math.floor(Math.random() * (playzone.clientWidth - btn2.clientWidth)) + 'px';
+            }
+
+        });
+
+    </script>
+</body>
+</html>
