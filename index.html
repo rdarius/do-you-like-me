@@ -60,8 +60,8 @@
                 console.log('move');
                 btn2.style.display = 'inline-block';
                 btn2.style.position = 'absolute';
-                btn2.style.top = Math.floor(Math.random() * (playzone.clientHeight - btn2.clientHeight)) + 'px';
-                btn2.style.left = Math.floor(Math.random() * (playzone.clientWidth - btn2.clientWidth)) + 'px';
+                btn2.style.top = Math.floor((Math.random() * (playzone.clientHeight - btn2.clientHeight))/playzone.clientHeight*100) + '%';
+                btn2.style.left = Math.floor((Math.random() * (playzone.clientWidth - btn2.clientWidth))/playzone.clientWidth*100) + '%';
             }
 
         });
